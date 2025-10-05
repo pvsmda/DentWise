@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DentWise - AI Powered Dental Assistant",
+  title: "OdontoVoice - Assistente Odontológico com IA",
   description:
-    "Get instant dental advice through voice calls with our AI assistant. Avaiable 24/7.",
+    "Receba orientações odontológicas instantâneas por chamadas de voz com nossa assistente de IA. Disponível 24 horas por dia, 7 dias por semana.",
 };
 
 export default function RootLayout({
@@ -25,10 +25,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        variables: {
+          colorPrimary: "#e78a53",
+          colorBackground: "#f3f4f6",
+          colorText: "#111827",
+          colorTextSecondary: "#6b7280",
+          colorInputBackground: "#f3f4f6",
+        },
+      }}
+    >
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
         >
           {children}
         </body>
